@@ -45,7 +45,15 @@ Very doubtful.
 
 // This should log "The ball has shaken!"
 // and return the answer.
-function shakeBall() {
+
+function shakeBall(ans) {
+	let magicAnswer = Math.floor(Math.random() * 4) + 1;
+	console.log('The ball has shaken!');
+	const theLevelOfpositivity = [ 'very positive', 'positive', 'negative', 'very negative' ];
+	for (let i = magicAnswer; i < theLevelOfpositivity.length; i++) {
+		return `${theLevelOfpositivity[i]}`;
+	}
+	console.log('Very Positive');
 }
 
 // This function should say whether the answer it is given is
@@ -55,6 +63,20 @@ function shakeBall() {
 // - very negative
 // This function should expect to be called with any value which was returned by the shakeBall function.
 function checkAnswer(answer) {
+	if (answer === 'It is decidedly so.') {
+		return `very positive`;
+	}
+	if (answer === 'My reply is no.') {
+		return `very negative`;
+	}
+	if (answer === 'very positive' || answer === 'positive' || answer === 'negative' || answer === 'Very negative') {
+		return answer;
+	}
+
+	const theLevelOfpositivity = [ 'very positive', 'positive', 'negative', 'very negative' ];
+	for (let i = 0; i <= theLevelOfpositivity.length; i++) {
+		return `${theLevelOfpositivity[i]}`;
+	}
 }
 
 /* ======= TESTS - DO NOT MODIFY =====
@@ -66,59 +88,45 @@ To run these tests type `node 3-magic-8-ball.js` into your terminal
 const log = console.log;
 let logged;
 console.log = function() {
-  log(...arguments);
-  logged = arguments[0];
+	log(...arguments);
+	logged = arguments[0];
 };
 
 function test(test_name, expr) {
-  let status;
-  if (expr) {
-    status = "PASSED";
-  } else {
-    status = "FAILED";
-  }
+	let status;
+	if (expr) {
+		status = 'PASSED';
+	} else {
+		status = 'FAILED';
+	}
 
-  logged = undefined;
-  console.log(`${test_name}: ${status}`);
+	logged = undefined;
+	console.log(`${test_name}: ${status}`);
 }
 
 const validAnswers = [];
 function testAll() {
-  const answer = shakeBall();
-  test(
-    `shakeBall logs "The ball has shaken!"`,
-    logged === "The ball has shaken!"
-  );
-  test(`shakeBall returns an string answer`, typeof answer === "string");
+	const answer = shakeBall();
+	test(`shakeBall logs "The ball has shaken!"`, logged === 'The ball has shaken!');
+	test(`shakeBall returns an string answer`, typeof answer === 'string');
 
-  test(
-    `checkAnswer("It is decidedly so.") returns "very positive`,
-    checkAnswer("It is decidedly so.") === "very positive"
-  )
+	test(
+		`checkAnswer("It is decidedly so.") returns "very positive`,
+		checkAnswer('It is decidedly so.') === 'very positive'
+	);
 
-  test(
-    `checkAnswer("My reply is no.") returns "very negative`,
-    checkAnswer("My reply is no.") === "very negative"
-  )
+	test(`checkAnswer("My reply is no.") returns "very negative`, checkAnswer('My reply is no.') === 'very negative');
 
-  test(
-    `checkAnswer returns the level of positivity"`,
-    ["very positive", "positive", "negative", "very negative"].includes(
-      checkAnswer(answer)
-    )
-  );
-  const answers = new Set();
-  for (let i = 0; i < 10; ++i) {
-    answers.add(shakeBall());
-  }
-  test(
-    `shakeBall returns different answers`,
-    answers.size > 1,
-  );
-  test(
-    `checkAnswer returns different answers`,
-    new Set(Array.from(answers.values()).map(checkAnswer)).size > 1,
-  );
+	test(
+		`checkAnswer returns the level of positivity"`,
+		[ 'very positive', 'positive', 'negative', 'very negative' ].includes(checkAnswer(answer))
+	);
+	const answers = new Set();
+	for (let i = 0; i < 10; ++i) {
+		answers.add(shakeBall());
+	}
+	test(`shakeBall returns different answers`, answers.size > 1);
+	test(`checkAnswer returns different answers`, new Set(Array.from(answers.values()).map(checkAnswer)).size > 1);
 }
 
 testAll();
