@@ -20,9 +20,7 @@ const getAllFrequencies = (list) => {
 	for (let i = 87; i <= 108; i++) {
 		frequencies.push(i);
 	}
-	frequencies;
-	let stationList = frequencies;
-	return stationList;
+	return frequencies;
 };
 getAllFrequencies();
 /**
