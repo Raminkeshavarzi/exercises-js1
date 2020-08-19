@@ -16,10 +16,13 @@
 // `getAllFrequencies` goes here
 
 const getAllFrequencies = (list) => {
-	let frequencies = new Array(21);
-	frequencies = [ 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108 ];
-
-	return frequencies;
+	const frequencies = [];
+	for (let i = 87; i <= 108; i++) {
+		frequencies.push(i);
+	}
+	frequencies;
+	let stationList = frequencies;
+	return stationList;
 };
 getAllFrequencies();
 /**
