@@ -11,8 +11,8 @@ let n = 10;
 function sumTillNum(num) {
 	//your code here
 	let sum = 0;
-	let number = num;
-	while (number <= n) {
+	let number = 0;
+	while (number < n) {
 		sum += number;
 		number++;
 		console.log(number);
