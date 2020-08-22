@@ -4,13 +4,9 @@
   Complete the functions below to get the first and last values from the array
 */
 
-function first(arr) {
-	return arr[0]; // complete this statement
-}
+const first = (arr) => arr[0]; // complete this statement
 
-function last(arr) {
-	return arr[arr.length - 1]; // complete this statement
-}
+const last = (arr) => arr[arr.length - 1]; // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE
