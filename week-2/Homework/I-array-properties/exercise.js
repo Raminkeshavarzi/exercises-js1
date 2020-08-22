@@ -5,9 +5,7 @@
 
 */
 
-function isEmpty(arr) {
-	return arr === null || arr.length < 1; // complete this statement
-}
+const isEmpty = (arr) => arr === null || arr.length < 1; // complete this statement
 
 /* 
   DO NOT EDIT BELOW THIS LINE
