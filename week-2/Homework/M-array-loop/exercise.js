@@ -6,11 +6,13 @@
 const daysOfWeek = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
 
 const startWithT = (arr) => {
-	for (let i in arr) {
-		if (arr[i].startsWith('T')) {
-			console.log(arr[i]);
+	const daysWithT = [];
+	for (let idx in arr) {
+		if (arr[idx].startsWith('T')) {
+			daysWithT.push(arr[idx]);
 		}
 	}
+	return daysWithT;
 };
 
 console.log(startWithT(daysOfWeek));
