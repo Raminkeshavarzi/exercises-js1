@@ -5,25 +5,21 @@
   The variable `lastFive` should contain the last five items of `everyone`
 */
 
-var everyone = [
-  "Daniel",
-  "Irina",
-  "Rares",
-  "Rukmini",
-  "Abdul",
-  "Austine",
-  "Swathi"
-];
+var everyone = [ 'Daniel', 'Irina', 'Rares', 'Rukmini', 'Abdul', 'Austine', 'Swathi' ];
 
-var firstFive; // complete this statement
-var lastFive; // complete this statement
+var firstFive = (arr, numStart, numEnd) => {
+	return arr.slice(numStart, numEnd);
+};
+var lastFive = (arr, numStart, numEnd) => {
+	return arr.slice(numStart, numEnd);
+};
 
 /* 
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */
 
-console.log(firstFive);
-console.log(lastFive);
+console.log(firstFive(everyone, 0, 5));
+console.log(lastFive(everyone, 2, 7));
 
 /* 
   EXPECTED RESULT
