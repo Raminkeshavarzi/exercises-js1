@@ -4,18 +4,16 @@
   Complete the function below to check if a country is in the UK
 */
 
-var ukNations = ["Scotland", "Wales", "England", "Northern Ireland"];
+var ukNations = [ 'Scotland', 'Wales', 'England', 'Northern Ireland' ];
 
-function isInUK(country) {
-  return; // complete this statement
-}
+const isInUK = (country) => ukNations.includes(country);
 
 /* 
   DO NOT EDIT BELOW THIS LINE
   --------------------------- */
-console.log(isInUK("France"));
-console.log(isInUK("Republic of Ireland"));
-console.log(isInUK("England"));
+console.log(isInUK('France'));
+console.log(isInUK('Republic of Ireland'));
+console.log(isInUK('England'));
 
 /* 
   EXPECTED RESULT
