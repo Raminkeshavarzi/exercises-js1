@@ -4,10 +4,10 @@
   The variable everyone should be an array containing both mentors and students.
 */
 
-var mentors = ["Daniel", "Irina", "Rares"];
-var students = ["Rukmini", "Abdul", "Austine", "Swathi"];
+var mentors = [ 'Daniel', 'Irina', 'Rares' ];
+var students = [ 'Rukmini', 'Abdul', 'Austine', 'Swathi' ];
 
-var everyone; // complete this statement
+var everyone = [ ...mentors, ...students ];
 
 /* 
   DO NOT EDIT BELOW THIS LINE
