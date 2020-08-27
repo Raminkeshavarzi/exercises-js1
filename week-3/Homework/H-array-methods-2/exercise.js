@@ -7,12 +7,8 @@
 
 var everyone = [ 'Daniel', 'Irina', 'Rares', 'Rukmini', 'Abdul', 'Austine', 'Swathi' ];
 
-var firstFive = (arr, numStart, numEnd) => {
-	return arr.slice(numStart, numEnd);
-};
-var lastFive = (arr, numStart, numEnd) => {
-	return arr.slice(numStart, numEnd);
-};
+var firstFive = (arr, numStart, numEnd) => arr.slice(numStart, numEnd);
+var lastFive = (arr, numStart, numEnd) => arr.slice(numStart, numEnd);
 
 /* 
   DO NOT EDIT BELOW THIS LINE
