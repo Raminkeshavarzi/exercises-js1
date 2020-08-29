@@ -13,11 +13,9 @@ const outPut = (arr) => {
 	arr.forEach((num, idx) => {
 		if (arr[idx] % 3 === 0 && arr[idx] % 5 === 0) {
 			arr[idx] = 'FizzBuzz';
-		}
-		if (arr[idx] % 5 === 0) {
+		} else if (arr[idx] % 5 === 0) {
 			arr[idx] = 'Buzz';
-		}
-		if (arr[idx] % 3 === 0) {
+		} else if (arr[idx] % 3 === 0) {
 			arr[idx] = 'Fizz';
 		}
 	});
